@@ -7,7 +7,11 @@ import {Button} from '@/components/ui/button';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {useToast} from '@/hooks/use-toast';
 
-const SignIn = () => {
+interface SignInProps {
+  setShowSignIn: (showSignIn: boolean) => void;
+}
+
+const SignIn: React.FC<SignInProps> = ({setShowSignIn}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {toast} = useToast();
@@ -92,3 +96,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+

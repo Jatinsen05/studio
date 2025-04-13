@@ -7,7 +7,11 @@ import {Button} from '@/components/ui/button';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {useToast} from '@/hooks/use-toast';
 
-const SignUp = () => {
+interface SignUpProps {
+  setShowSignIn: (showSignIn: boolean) => void;
+}
+
+const SignUp: React.FC<SignUpProps> = ({setShowSignIn}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {toast} = useToast();
@@ -101,3 +105,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
